@@ -4,14 +4,29 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: black;
-  font-family: Arial, sans-serif;
+
+  background: linear-gradient(135deg, #667eea, #764ba2);
+
+  font-family: 'Poppins', sans-serif;
 }
 
 .clock {
-  color: #00ffcc;
-  font-size: 40px;
-  border: 3px solid #00ffcc;
-  padding: 20px 40px;
-  border-radius: 10px;
+  font-size: 60px;
+  font-weight: 600;
+  letter-spacing: 4px;
+
+  color: #ffffff;
+
+  padding: 22px 50px;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  border-radius: 20px;
+
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.2);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
