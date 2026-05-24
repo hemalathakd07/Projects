@@ -1,35 +1,60 @@
-function addTask() {
-  const input = document.getElementById("taskInput");
-  const taskText = input.value.trim();
+// Modern To-Do App JavaScript
 
-  if (taskText === "") {
-    alert("Please enter a task");
+const taskInput = document.getElementById("taskInput");
+const taskList = document.getElementById("taskList");
+
+// Add task when button is clicked
+function addTask() {
+  const taskText = taskInput.value.trim();
+
+  // Validation
+  if (!taskText) {
+    showAlert("Please enter a task");
     return;
   }
 
+  // Create task item
   const li = document.createElement("li");
+  li.className = "task-item";
 
-  const span = document.createElement("span");
-  span.innerText = taskText;
+  li.innerHTML = `
+    <span class="task-text">${taskText}</span>
+    <div class="task-actions">
+      <button class="complete-btn">✔</button>
+      <button class="delete-btn">✖</button>
+    </div>
+  `;
 
-  // Mark task as completed
-  span.onclick = function () {
-    span.classList.toggle("completed");
-  };
+  // Complete task
+  li.querySelector(".complete-btn").addEventListener("click", () => {
+    li.classList.toggle("completed");
+  });
 
-  // Delete button
-  const deleteBtn = document.createElement("button");
-  deleteBtn.innerText = "Delete";
-  deleteBtn.classList.add("delete-btn");
+  // Delete task
+  li.querySelector(".delete-btn").addEventListener("click", () => {
+    li.style.opacity = "0";
 
-  deleteBtn.onclick = function () {
-    li.remove();
-  };
+    setTimeout(() => {
+      li.remove();
+    }, 300);
+  });
 
-  li.appendChild(span);
-  li.appendChild(deleteBtn);
+  // Add task to list
+  taskList.appendChild(li);
 
-  document.getElementById("taskList").appendChild(li);
+  // Clear input
+  taskInput.value = "";
+  taskInput.focus();
+}
 
-  input.value = "";
+// Add task using Enter key
+taskInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    addTask();
+  }
+});
+
+// Custom alert function
+function showAlert(message) {
+  alert(message);
 }
