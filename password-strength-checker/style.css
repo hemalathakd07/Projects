@@ -4,45 +4,90 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    overflow: hidden;
 }
 
 .container {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 30px;
-    border-radius: 15px;
+    width: 350px;
+    padding: 35px;
+    border-radius: 20px;
     text-align: center;
-    width: 320px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
     color: white;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    letter-spacing: 1px;
 }
 
 input {
-    width: 90%;
-    padding: 10px;
+    width: 92%;
+    padding: 12px;
     margin: 15px 0;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     outline: none;
+    font-size: 15px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    transition: 0.3s;
+}
+
+input::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+input:focus {
+    background: rgba(255,255,255,0.3);
+    box-shadow: 0 0 10px rgba(255,255,255,0.4);
 }
 
 button {
-    padding: 10px 20px;
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
     border: none;
-    border-radius: 8px;
-    background: #00c6ff;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
     color: white;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background: #0096c7;
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
 
 #result {
-    margin-top: 20px;
-    font-size: 20px;
+    margin-top: 25px;
+    font-size: 22px;
     font-weight: bold;
+    color: #ffe082;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
