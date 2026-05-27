@@ -1,67 +1,198 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #0f172a;
-    color: white;
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b, #111827);
+    min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+
+    color: white;
+    overflow: hidden;
 }
 
-.container {
-    background: #1e293b;
-    padding: 30px;
-    border-radius: 12px;
-    width: 400px;
+/* Background Glow */
+body::before,
+body::after{
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: -1;
+}
+
+body::before{
+    background: #38bdf8;
+    top: -80px;
+    left: -80px;
+}
+
+body::after{
+    background: #8b5cf6;
+    bottom: -100px;
+    right: -100px;
+}
+
+/* Main Card */
+.container{
+    width: 420px;
+    padding: 35px;
+
+    background: rgba(30, 41, 59, 0.75);
+    backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 22px;
+
+    box-shadow:
+        0 8px 32px rgba(0,0,0,0.4),
+        inset 0 0 10px rgba(255,255,255,0.03);
+
     text-align: center;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+
+    animation: fadeIn 0.8s ease;
 }
 
-h1 {
-    margin-bottom: 20px;
+h1{
+    font-size: 30px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
+/* Inputs */
 textarea,
-input {
+input{
     width: 100%;
-    padding: 12px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
+    padding: 14px 16px;
+    margin-top: 14px;
+
+    border: 1px solid transparent;
+    border-radius: 14px;
+
+    background: rgba(255,255,255,0.08);
+    color: white;
+
+    font-size: 15px;
+    outline: none;
+
+    transition: all 0.3s ease;
 }
 
-textarea {
-    height: 100px;
+textarea{
+    height: 120px;
     resize: none;
 }
 
-.buttons {
-    margin-top: 15px;
+textarea::placeholder,
+input::placeholder{
+    color: #cbd5e1;
 }
 
-button {
-    padding: 10px 20px;
-    margin: 5px;
+/* Focus Effect */
+textarea:focus,
+input:focus{
+    border-color: #38bdf8;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
+    background: rgba(255,255,255,0.12);
+}
+
+/* Button Section */
+.buttons{
+    margin-top: 22px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+button{
+    padding: 12px 24px;
+
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
     cursor: pointer;
-    font-size: 16px;
-    background: #38bdf8;
-    color: black;
-    font-weight: bold;
+
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(14, 165, 233, 0.35);
 }
 
-button:hover {
-    background: #0ea5e9;
+button:hover{
+    transform: translateY(-3px) scale(1.03);
+
+    background: linear-gradient(135deg, #0ea5e9, #0284c7);
+
+    box-shadow: 0 8px 22px rgba(14, 165, 233, 0.5);
 }
 
-#result {
-    margin-top: 15px;
-    background: #334155;
-    padding: 15px;
-    border-radius: 8px;
-    min-height: 50px;
+button:active{
+    transform: scale(0.96);
+}
+
+/* Result Box */
+#result{
+    margin-top: 22px;
+    padding: 18px;
+
+    min-height: 70px;
+
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 16px;
+
+    text-align: left;
+    line-height: 1.6;
+
     word-wrap: break-word;
+
+    transition: 0.3s ease;
+}
+
+/* Smooth Entry Animation */
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsive */
+@media(max-width: 500px){
+
+    .container{
+        width: 90%;
+        padding: 25px;
+    }
+
+    h1{
+        font-size: 24px;
+    }
+
+    button{
+        width: 100%;
+    }
 }
