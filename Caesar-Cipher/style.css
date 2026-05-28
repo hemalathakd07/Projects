@@ -11,11 +11,9 @@ body{
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #0f172a, #1e293b, #111827);
     min-height: 100vh;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     color: white;
     overflow: hidden;
 }
@@ -48,19 +46,14 @@ body::after{
 .container{
     width: 420px;
     padding: 35px;
-
     background: rgba(30, 41, 59, 0.75);
     backdrop-filter: blur(14px);
-
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 22px;
-
     box-shadow:
         0 8px 32px rgba(0,0,0,0.4),
         inset 0 0 10px rgba(255,255,255,0.03);
-
     text-align: center;
-
     animation: fadeIn 0.8s ease;
 }
 
