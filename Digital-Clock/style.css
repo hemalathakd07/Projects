@@ -4,9 +4,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
   background: linear-gradient(135deg, #667eea, #764ba2);
-
   font-family: 'Poppins', sans-serif;
 }
 
@@ -16,17 +14,11 @@ body {
   letter-spacing: 4px;
 
   color: #ffffff;
-
   padding: 22px 50px;
-
   background: rgba(255, 255, 255, 0.15);
-
   border-radius: 20px;
-
   backdrop-filter: blur(10px);
-
   box-shadow:
     0 8px 25px rgba(0, 0, 0, 0.2);
-
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
