@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -10,9 +12,9 @@
     <input type="text" id="display" readonly>
 
     <div class="buttons">
-        <button class="clear" onclick="clearDisplay()">C</button>
-        <button onclick="appendValue('(')">(</button>
-        <button onclick="appendValue(')')">)</button>
+        <button class="clear" onclick="clearDisplay()">AC</button>
+        <button class="delete" onclick="deleteLast()">⌫</button>
+        <button class="operator" onclick="appendValue('%')">%</button>
         <button class="operator" onclick="appendValue('/')">÷</button>
 
         <button onclick="appendValue('7')">7</button>
@@ -30,31 +32,13 @@
         <button onclick="appendValue('3')">3</button>
         <button class="operator" onclick="appendValue('+')">+</button>
 
-        <button onclick="appendValue('0')">0</button>
+        <button class="zero" onclick="appendValue('0')">0</button>
         <button onclick="appendValue('.')">.</button>
         <button class="equal" onclick="calculate()">=</button>
     </div>
 </div>
 
-<script>
-    let display = document.getElementById("display");
-
-    function appendValue(value) {
-        display.value += value;
-    }
-
-    function clearDisplay() {
-        display.value = "";
-    }
-
-    function calculate() {
-        try {
-            display.value = eval(display.value);
-        } catch {
-            display.value = "Error";
-        }
-    }
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
