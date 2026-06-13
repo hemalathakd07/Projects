@@ -1,7 +1,3 @@
-/* Modern To-Do App CSS */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
-
 * {
   margin: 0;
   padding: 0;
@@ -9,70 +5,47 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #5f72ff, #9b23ea);
-  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 20px;
+  padding: 30px;
 }
 
 .container {
-  width: 100%;
-  max-width: 420px;
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 32px;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
-  animation: slideUp 0.6s ease;
+  width: 400px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #ccc;
 }
 
 h1 {
   text-align: center;
-  color: #1f1f1f;
-  margin-bottom: 25px;
-  font-size: 32px;
-  font-weight: 700;
-  letter-spacing: 1px;
+  margin-bottom: 20px;
 }
 
 .input-section {
   display: flex;
-  gap: 12px;
-  margin-bottom: 22px;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 input {
   flex: 1;
-  padding: 13px;
-  border: 2px solid #dcdcdc;
-  border-radius: 12px;
-  outline: none;
-  font-size: 15px;
-  transition: all 0.3s ease;
-}
-
-input:focus {
-  border-color: #7c4dff;
-  box-shadow: 0 0 10px rgba(124, 77, 255, 0.3);
+  padding: 10px;
 }
 
 button {
-  border: none;
-  padding: 12px 18px;
-  border-radius: 12px;
-  background: #7c4dff;
+  padding: 10px 15px;
+  background: blue;
   color: white;
-  font-size: 14px;
-  font-weight: 600;
+  border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 button:hover {
-  background: #6930f5;
-  transform: translateY(-3px);
+  background: darkblue;
 }
 
 ul {
@@ -80,61 +53,18 @@ ul {
 }
 
 li {
-  background: #f4f6ff;
-  padding: 14px;
-  margin-bottom: 12px;
-  border-radius: 12px;
+  background: #eee;
+  padding: 10px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  transition: 0.3s ease;
-  border-left: 5px solid #7c4dff;
-}
-
-li:hover {
-  transform: scale(1.03);
 }
 
 .completed {
   text-decoration: line-through;
-  color: #777;
-  opacity: 0.75;
+  color: gray;
 }
 
 .delete-btn {
-  background: #ff4d6d;
-  padding: 7px 12px;
-  border-radius: 8px;
-  font-size: 13px;
-}
-
-.delete-btn:hover {
-  background: #e03152;
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(35px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 500px) {
-  .container {
-    padding: 22px;
-  }
-
-  h1 {
-    font-size: 26px;
-  }
-
-  button {
-    padding: 10px 14px;
-  }
+  background: red;
 }
